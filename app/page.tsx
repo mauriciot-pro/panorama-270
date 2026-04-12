@@ -78,7 +78,7 @@ const units = [
 // ─────────────────────────────────────────────────────────────────────────────
 // COMPANY LOGOS (Companies Making This a Reality)
 // ─────────────────────────────────────────────────────────────────────────────
-const companies = [
+const companies: { src: string; alt: string; href: string }[] = [
   // { src: "/images/companies/logo1.png", alt: "Company name", href: "https://company.com" },
 ];
 
