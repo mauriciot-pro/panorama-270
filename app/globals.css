@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ─── Google Fonts ─────────────────────────────────────────────────────────
+   Cormorant Garamond → elegant display / headings (matches Wix luxury feel)
+   Lato              → clean body text
+   Both are imported via <link> in layout.tsx
+──────────────────────────────────────────────────────────────────────────── */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased text-gray-800;
+    font-family: "Lato", Arial, sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+  }
+}
+
+@layer utilities {
+  /* Letter-spacing helpers */
+  .tracking-ultra {
+    letter-spacing: 0.35em;
+  }
+
+  /* Thin horizontal rule */
+  .divider {
+    @apply w-10 h-px bg-[#C8C8C8] mx-auto my-8;
+  }
+}

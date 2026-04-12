@@ -1,0 +1,46 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# next.js
+/.next/
+/out/
+
+# production build
+/build
+
+# misc
+.DS_Store
+*.pem
+Thumbs.db
+
+# debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# ── Raw source assets (already processed into public/) ──────────────────────
+# These large files are source originals — optimized versions live in public/
+pictures/
+"Video intro copy.mp4"
+Video intro copy.mp4
+CU A.pdf
+CU B.pdf
+CU.png
+P270 logo.png
+
+# Hero video is served via CDN fallback on production
+# Upload to Vercel Blob or similar for self-hosted video later
+public/videos/
