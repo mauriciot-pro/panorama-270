@@ -33,8 +33,8 @@ export default function SplashScreen() {
     sessionStorage.setItem("splashShown", "1");
 
     // First visit — hold, then fade out
-    const tFade = setTimeout(() => setPhase("fadeOut"), 1350);
-    const tGone = setTimeout(() => setPhase("gone"), 2150);
+    const tFade = setTimeout(() => setPhase("fadeOut"), 2350);
+    const tGone = setTimeout(() => setPhase("gone"), 3150);
 
     return () => {
       clearTimeout(tFade);
