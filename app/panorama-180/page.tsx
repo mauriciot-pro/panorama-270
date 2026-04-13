@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import PeekCarousel from "@/components/PeekCarousel";
 
 export const metadata: Metadata = {
   title: "Panorama 180° | Escazú, Costa Rica",
   description:
     "The first phase of the Panorama project — Panorama 180° — is completed. Luxury residences in Escazú, Costa Rica.",
 };
+
+const galleryImages = [
+  { src: "/images/panorama180/building.jpg", alt: "Panorama 180° – Completed building" },
+  { src: "/images/panorama180/view-1.jpg",   alt: "Panorama 180° – Valley view" },
+  { src: "/images/panorama180/view-2.jpg",   alt: "Panorama 180° – City view" },
+];
 
 export default function Panorama180Page() {
   return (
@@ -21,7 +28,6 @@ export default function Panorama180Page() {
           className="object-cover object-center"
           priority
         />
-        {/* Dark overlay */}
         <div className="absolute inset-0 bg-[#091235]/60" />
 
         <div className="relative z-10 text-center px-6 py-24">
@@ -44,9 +50,6 @@ export default function Panorama180Page() {
       {/* ── DESCRIPTION ──────────────────────────────────────────────────── */}
       <section className="bg-white py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-[#091235] font-display text-4xl md:text-5xl font-light tracking-wide mb-4">
-            A Completed Vision
-          </h2>
           <div className="w-10 h-px bg-[#C8C8C8] mx-auto mb-10" />
 
           <p className="text-gray-600 font-body text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
@@ -76,10 +79,10 @@ export default function Panorama180Page() {
           {/* Key specs */}
           <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
             {[
-              { value: "7",      label: "Levels" },
-              { value: "19",     label: "Residential Units" },
-              { value: "320–445 m²", label: "Total Area" },
-              { value: "180°",   label: "Panoramic Views" },
+              { value: "7",         label: "Levels" },
+              { value: "19",        label: "Residential Units" },
+              { value: "320–445 m²", label: "Unit Area" },
+              { value: "180°",      label: "Panoramic Views" },
             ].map((stat) => (
               <div key={stat.label} className="flex flex-col items-center gap-2">
                 <span className="text-[#091235] font-display text-2xl md:text-3xl font-light tracking-wide">
@@ -95,46 +98,8 @@ export default function Panorama180Page() {
         </div>
       </section>
 
-      {/* ── FULL-WIDTH BUILDING PHOTO ─────────────────────────────────────── */}
-      <section className="w-full">
-        <div className="relative w-full h-[55vw] max-h-[680px] min-h-[320px] overflow-hidden">
-          <Image
-            src="/images/panorama180/building.jpg"
-            alt="Panorama 180° – completed building"
-            fill
-            className="object-cover object-center"
-          />
-        </div>
-      </section>
-
-      {/* ── VIEWS — two panoramic photos side by side ────────────────────── */}
-      <section className="bg-[#F5F5F5] py-20 md:py-28">
-        <div className="max-w-screen-xl mx-auto px-6">
-          <h2 className="text-center text-[#091235] font-display text-4xl md:text-5xl font-light tracking-wide mb-4">
-            The Views
-          </h2>
-          <div className="w-10 h-px bg-[#C8C8C8] mx-auto mb-16" />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              { src: "/images/panorama180/view-1.jpg", alt: "Panoramic view from Panorama 180° – Valley" },
-              { src: "/images/panorama180/view-2.jpg", alt: "Panoramic view from Panorama 180° – City" },
-            ].map((img) => (
-              <div
-                key={img.src}
-                className="relative aspect-[3/2] overflow-hidden group"
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── PHOTO CAROUSEL ───────────────────────────────────────────────── */}
+      <PeekCarousel images={galleryImages} autoPlayInterval={6000} />
 
       {/* ── CTA — link back to Panorama 270 ──────────────────────────────── */}
       <section className="bg-[#091235] py-24 md:py-32 text-center">
