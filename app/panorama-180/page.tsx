@@ -11,12 +11,20 @@ export const metadata: Metadata = {
 export default function Panorama180Page() {
   return (
     <main>
-      {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="relative w-full min-h-[60vh] bg-[#091235] flex items-center justify-center overflow-hidden">
-        {/* Background image placeholder – replace src with your Panorama 180 hero image */}
-        {/* <Image src="/images/panorama180-hero.jpg" alt="Panorama 180°" fill className="object-cover opacity-40" /> */}
 
-        <div className="relative z-10 text-center px-6 py-20">
+      {/* ── HERO — building photo as background ──────────────────────────── */}
+      <section className="relative w-full min-h-[75vh] flex items-center justify-center overflow-hidden">
+        <Image
+          src="/images/panorama180/building.jpg"
+          alt="Panorama 180° building"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-[#091235]/60" />
+
+        <div className="relative z-10 text-center px-6 py-24">
           <p className="text-[#C8C8C8] text-xs tracking-[0.35em] uppercase font-body mb-4">
             Phase One · Completed
           </p>
@@ -33,43 +41,125 @@ export default function Panorama180Page() {
         </div>
       </section>
 
-      {/* ── CONTENT PLACEHOLDER ──────────────────────────────────────────── */}
-      {/*
-        TODO: Add your Panorama 180 content below.
-        This should include:
-          - Project description
-          - Gallery of completed units / building
-          - Floor plans / models
-          - Location
-      */}
+      {/* ── DESCRIPTION ──────────────────────────────────────────────────── */}
       <section className="bg-white py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-[#091235] font-display text-4xl font-light tracking-wide mb-6">
+          <h2 className="text-[#091235] font-display text-4xl md:text-5xl font-light tracking-wide mb-4">
             A Completed Vision
           </h2>
           <div className="w-10 h-px bg-[#C8C8C8] mx-auto mb-10" />
-          <p className="text-gray-600 font-body text-base md:text-lg leading-relaxed">
+
+          <p className="text-gray-600 font-body text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
             Panorama 180° represents the first chapter of a landmark residential
             development in Jaboncillo, Escazú. With its stunning panoramic views
             and meticulous design, the building stands as a testament to
             architectural excellence.
           </p>
+
+          <p className="mt-6 text-gray-600 font-body text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+            With a height of{" "}
+            <strong className="text-[#091235] font-medium">7 levels</strong> and
+            a total of{" "}
+            <strong className="text-[#091235] font-medium">
+              19 residential units
+            </strong>
+            , the building features two apartment models with total areas ranging
+            from{" "}
+            <strong className="text-[#091235] font-medium">320 m²</strong> to{" "}
+            <strong className="text-[#091235] font-medium">445 m²</strong>.
+            Located in the most privileged area of Escazú, the land offers the
+            most favorable characteristics for providing spectacular views of
+            over{" "}
+            <strong className="text-[#091235] font-medium">180°</strong>.
+          </p>
+
+          {/* Key specs */}
+          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
+            {[
+              { value: "7",      label: "Levels" },
+              { value: "19",     label: "Residential Units" },
+              { value: "320–445 m²", label: "Total Area" },
+              { value: "180°",   label: "Panoramic Views" },
+            ].map((stat) => (
+              <div key={stat.label} className="flex flex-col items-center gap-2">
+                <span className="text-[#091235] font-display text-2xl md:text-3xl font-light tracking-wide">
+                  {stat.value}
+                </span>
+                <div className="w-6 h-px bg-[#C8C8C8]" />
+                <span className="text-gray-500 font-body text-xs tracking-[0.15em] uppercase">
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ── BACK LINK ────────────────────────────────────────────────────── */}
-      <section className="bg-[#F5F5F5] py-16 text-center">
+      {/* ── FULL-WIDTH BUILDING PHOTO ─────────────────────────────────────── */}
+      <section className="w-full">
+        <div className="relative w-full h-[55vw] max-h-[680px] min-h-[320px] overflow-hidden">
+          <Image
+            src="/images/panorama180/building.jpg"
+            alt="Panorama 180° – completed building"
+            fill
+            className="object-cover object-center"
+          />
+        </div>
+      </section>
+
+      {/* ── VIEWS — two panoramic photos side by side ────────────────────── */}
+      <section className="bg-[#F5F5F5] py-20 md:py-28">
+        <div className="max-w-screen-xl mx-auto px-6">
+          <h2 className="text-center text-[#091235] font-display text-4xl md:text-5xl font-light tracking-wide mb-4">
+            The Views
+          </h2>
+          <div className="w-10 h-px bg-[#C8C8C8] mx-auto mb-16" />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              { src: "/images/panorama180/view-1.jpg", alt: "Panoramic view from Panorama 180° – Valley" },
+              { src: "/images/panorama180/view-2.jpg", alt: "Panoramic view from Panorama 180° – City" },
+            ].map((img) => (
+              <div
+                key={img.src}
+                className="relative aspect-[3/2] overflow-hidden group"
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA — link back to Panorama 270 ──────────────────────────────── */}
+      <section className="bg-[#091235] py-24 md:py-32 text-center">
+        <p className="text-[#C8C8C8] text-xs tracking-[0.3em] uppercase font-body mb-4">
+          Phase Two
+        </p>
+        <h2 className="text-white font-display text-5xl md:text-6xl font-light tracking-wide leading-tight">
+          Panorama 270°
+        </h2>
+        <div className="mt-6 w-10 h-px bg-white/30 mx-auto" />
+        <p className="mt-8 text-[#C8C8C8] font-body text-base leading-relaxed tracking-wider max-w-md mx-auto">
+          The second phase is now underway — raising the bar even further.
+        </p>
         <Link
           href="/"
           className="
-            inline-block px-10 py-4
-            border border-[#091235] text-[#091235] text-xs tracking-[0.25em] uppercase font-body font-light
-            hover:bg-[#091235] hover:text-white transition-all duration-300
+            inline-block mt-10 px-10 py-4
+            border border-white/40 text-white text-xs tracking-[0.25em] uppercase font-body font-light
+            hover:bg-white hover:text-[#091235] transition-all duration-300
           "
         >
-          ← Back to Panorama 270°
+          Explore Panorama 270°
         </Link>
       </section>
+
     </main>
   );
 }
