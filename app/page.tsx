@@ -45,7 +45,7 @@ const section1Images = [
 // ─────────────────────────────────────────────────────────────────────────────
 const progressImages = [
   { src: "/images/progress/1.png",  alt: "Construction progress – photo 1" },
-  { src: "/images/progress/2.jpeg", alt: "Construction progress – photo 2" },
+  { src: "/images/progress/2.png",  alt: "Construction progress – photo 2" },
   { src: "/images/progress/3.png",  alt: "Construction progress – photo 3" },
   { src: "/images/progress/4.png",  alt: "Construction progress – photo 4" },
   { src: "/images/progress/5.png",  alt: "Construction progress – photo 5" },
