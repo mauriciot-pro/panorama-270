@@ -253,7 +253,7 @@ export default function HomePage() {
               </p>
             </div>
             <a
-              href="https://www.google.com/maps/place/WRFV%2BRX+Escazu,+San+Jos%C3%A9+Province,+Costa+Rica"
+              href="https://maps.app.goo.gl/RAyeCR2aQAt9xXpQ8"
               target="_blank"
               rel="noopener noreferrer"
               className="

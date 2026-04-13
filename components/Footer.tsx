@@ -42,7 +42,7 @@ export default function Footer() {
             <div className="flex items-center gap-5">
               {/* Instagram */}
               <a
-                href="https://www.instagram.com/panorama270cr"
+                href="https://www.instagram.com/panorama_escazu/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -65,7 +65,7 @@ export default function Footer() {
               </a>
               {/* Facebook */}
               <a
-                href="https://www.facebook.com/panorama270cr"
+                href="https://www.facebook.com/PanoramaEscazu"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -113,7 +113,7 @@ export default function Footer() {
                 San José, Costa Rica
               </p>
               <a
-                href="https://www.google.com/maps/place/WRFV%2BRX+Escazu,+San+Jos%C3%A9+Province,+Costa+Rica"
+                href="https://maps.app.goo.gl/RAyeCR2aQAt9xXpQ8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block mt-4 text-white/40 font-body text-[10px] tracking-[0.2em] uppercase hover:text-white/70 transition-colors"
