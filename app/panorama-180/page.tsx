@@ -69,14 +69,16 @@ export default function Panorama180Page() {
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row min-h-[560px] md:min-h-[640px]">
 
-            {/* Left: building photo */}
-            <div className="relative w-full md:w-[45%] min-h-[380px] md:min-h-[640px]">
-              <Image
-                src="/images/panorama180/4.jpg"
-                alt="Panorama 180° – building exterior"
-                fill
-                className="object-cover object-center"
-              />
+            {/* Left: building photo with whitespace padding */}
+            <div className="w-full md:w-[45%] min-h-[420px] md:min-h-[640px] flex items-center justify-center p-8 md:p-10 bg-white">
+              <div className="relative w-full h-full min-h-[360px]">
+                <Image
+                  src="/images/panorama180/1.jpg"
+                  alt="Panorama 180° – building and greenery"
+                  fill
+                  className="object-contain object-center"
+                />
+              </div>
             </div>
 
             {/* Right: text */}
@@ -85,10 +87,6 @@ export default function Panorama180Page() {
                 <p className="text-[#091235] font-body text-xs tracking-[0.3em] uppercase mb-6">
                   Phase One · Completed
                 </p>
-                <h2 className="text-[#091235] font-display text-4xl md:text-5xl font-light tracking-wide leading-tight mb-8">
-                  A Completed<br />
-                  <span className="italic">Vision</span>
-                </h2>
                 <div className="w-10 h-px bg-[#C8C8C8] mb-8" />
 
                 <p className="text-gray-600 font-body text-base md:text-lg leading-relaxed">

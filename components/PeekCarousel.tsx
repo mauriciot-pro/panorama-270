@@ -74,12 +74,12 @@ export default function PeekCarousel({ images, autoPlayInterval = 6000 }: PeekCa
                 pointerEvents:  isVisible ? "auto" : "none",
               }}
             >
-              <div className="relative w-full h-full overflow-hidden shadow-2xl">
+              <div className="relative w-full h-full overflow-hidden shadow-2xl bg-[#091235]">
                 <Image
                   src={img.src}
                   alt={img.alt}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="(max-width: 768px) 90vw, 65vw"
                   priority={isCenter}
                 />
