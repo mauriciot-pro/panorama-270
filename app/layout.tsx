@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SplashScreen from "@/components/SplashScreen";
 
 export const metadata: Metadata = {
   title: "Panorama 270",
@@ -43,6 +44,9 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-white">
+        {/* Intro splash — shows once per session, fades out in ≤ 2 s */}
+        <SplashScreen />
+
         {/* Fixed navbar sits above all pages */}
         <Navbar />
 
