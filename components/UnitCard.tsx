@@ -111,7 +111,7 @@ export default function UnitCard({ name, imageSrc, specs, extras = [], plainExtr
               </div>
 
               {extras.length > 0 && (
-                <div className="mt-6 pt-6 border-t border-[#D7D7D8] flex flex-wrap gap-3">
+                <div className={`mt-6 pt-6 border-t border-[#D7D7D8] ${plainExtras ? "flex flex-col gap-2" : "flex flex-wrap gap-3"}`}>
                   {extras.map((item) => (
                     plainExtras ? (
                       <span

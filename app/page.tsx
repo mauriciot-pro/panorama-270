@@ -69,6 +69,7 @@ const units = [
       { label: "Parking",    value: "2" },
     ],
     extras: ["Maid's room", "Storage room"],
+    plainExtras: true,
   },
   {
     name: "Center Unit B",
@@ -80,6 +81,7 @@ const units = [
       { label: "Parking",    value: "2" },
     ],
     extras: ["Maid's room", "Storage room"],
+    plainExtras: true,
   },
   {
     name: "Corner Unit",
@@ -128,24 +130,15 @@ export default function HomePage() {
 
               <p className="mt-10 text-gray-600 font-body text-base md:text-lg leading-relaxed">
                 The second phase of the project includes the development of Panorama
-                270°, with a height of{" "}
-                <strong className="text-[#091235] font-medium">7 stories</strong>{" "}
-                and a total of{" "}
-                <strong className="text-[#091235] font-medium">
-                  19 residential units
-                </strong>
-                .
+                270°, with a height of 7 stories and a total of 19 residential units.
               </p>
               <p className="mt-5 text-gray-600 font-body text-base md:text-lg leading-relaxed">
                 The building features three apartment models with total areas ranging
-                from{" "}
-                <strong className="text-[#091235] font-medium">320 m²</strong> to{" "}
-                <strong className="text-[#091235] font-medium">510 m²</strong>.
+                from 320 m² to 510 m².
               </p>
               <p className="mt-5 text-gray-600 font-body text-base md:text-lg leading-relaxed">
                 Located in the most privileged area of Escazú, the location offers
-                the most favorable conditions for spectacular views of over{" "}
-                <strong className="text-[#091235] font-medium">270°</strong>.
+                the most favorable conditions for spectacular views of over 270°.
               </p>
             </div>
           </div>
