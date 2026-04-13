@@ -104,13 +104,15 @@ export default function HomePage() {
       <section id="about" className="bg-white">
         <div className="flex flex-col md:flex-row min-h-[560px] md:min-h-[640px]">
 
-          {/* Left: image carousel (full height of the section) */}
-          <div className="relative w-full md:w-1/2 min-h-[400px] md:min-h-[640px]">
-            <Carousel
-              images={section1Images}
-              autoPlayInterval={5000}
-              className="absolute inset-0 w-full h-full"
-            />
+          {/* Left: image carousel with surrounding whitespace */}
+          <div className="relative w-full md:w-1/2 min-h-[400px] md:min-h-[640px] p-6 md:p-10 flex items-stretch">
+            <div className="relative w-full h-full min-h-[350px]">
+              <Carousel
+                images={section1Images}
+                autoPlayInterval={5000}
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
           </div>
 
           {/* Right: text content */}
@@ -146,18 +148,6 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── RENDER IMAGE ─────────────────────────────────────────────────── */}
-      <section className="w-full">
-        <div className="relative w-full aspect-[16/9] max-h-[700px] overflow-hidden">
-          <Image
-            src="https://static.wixstatic.com/media/53ff5e_a984563841934555bcfd564b3e452424~mv2.jpeg/v1/fill/w_1101,h_852,al_c,q_85,enc_avif,quality_auto/53ff5e_a984563841934555bcfd564b3e452424~mv2.jpeg"
-            alt="Panorama 270° Render"
-            fill
-            className="object-cover"
-          />
         </div>
       </section>
 
