@@ -96,21 +96,11 @@ export default function Panorama180Page() {
                   sought-after neighborhood.
                 </p>
                 <p className="mt-5 text-gray-600 font-body text-base md:text-lg leading-relaxed">
-                  Rising{" "}
-                  <strong className="text-[#091235] font-medium">7 levels</strong>{" "}
-                  with{" "}
-                  <strong className="text-[#091235] font-medium">
-                    19 exclusive residences
-                  </strong>
-                  , the building offers two distinct apartment models ranging
-                  from{" "}
-                  <strong className="text-[#091235] font-medium">320 m²</strong>{" "}
-                  to{" "}
-                  <strong className="text-[#091235] font-medium">445 m²</strong>
-                  . Positioned on Escazú's most privileged hillside, every unit
-                  commands sweeping views stretching over{" "}
-                  <strong className="text-[#091235] font-medium">180°</strong>{" "}
-                  of the Central Valley.
+                  Rising 7 levels with 19 exclusive residences, the building
+                  offers two distinct apartment models ranging from 320 m² to
+                  445 m². Positioned on Escazú's most privileged hillside, every
+                  unit commands sweeping views stretching over 180° of the
+                  Central Valley.
                 </p>
 
                 {/* Stats row */}
