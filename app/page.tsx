@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
+import Carousel from "@/components/Carousel";
 import UnitCard from "@/components/UnitCard";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,22 +18,40 @@ const LeafletMap = dynamic(() => import("@/components/LeafletMap"), {
 });
 
 // ─────────────────────────────────────────────────────────────────────────────
+// SECTION 1 — PROJECT OVERVIEW IMAGES
+// Photos are served from /public/images/section1/ and displayed in numeric order.
+// To add a new photo: drop it in that folder and name it with the next number
+// (e.g. 10.jpg), then add an entry below.
+// ─────────────────────────────────────────────────────────────────────────────
+const section1Images = [
+  { src: "/images/section1/1.jpeg", alt: "Panorama 270° – Render 1" },
+  { src: "/images/section1/2.jpeg", alt: "Panorama 270° – Render 2" },
+  { src: "/images/section1/3.jpeg", alt: "Panorama 270° – Render 3" },
+  { src: "/images/section1/4.jpeg", alt: "Panorama 270° – Render 4" },
+  { src: "/images/section1/5.png",  alt: "Panorama 270° – Photo 1" },
+  { src: "/images/section1/6.png",  alt: "Panorama 270° – Photo 2" },
+  { src: "/images/section1/7.png",  alt: "Panorama 270° – Photo 3" },
+  { src: "/images/section1/8.jpg",  alt: "Panorama 270° – Photo 4" },
+  { src: "/images/section1/9.jpeg", alt: "Panorama 270° – Photo 5" },
+];
+
+// ─────────────────────────────────────────────────────────────────────────────
 // CONSTRUCTION PROGRESS IMAGES
 // Photos are served from /public/images/progress/ and displayed in numeric order.
 // To add a new photo: drop it in that folder and name it with the next number
-// (e.g. 7.jpg), then add an entry below.
+// (e.g. 7.png), then add an entry below.
 // To reorder: just rename the files (1, 2, 3…) — the array order here controls
 // the on-screen sequence.
 // ─────────────────────────────────────────────────────────────────────────────
 const progressImages = [
-  { src: "/images/progress/1.jpg",  alt: "Construction progress – photo 1" },
-  { src: "/images/progress/2.jpg",  alt: "Construction progress – photo 2" },
-  { src: "/images/progress/3.jpg",  alt: "Construction progress – photo 3" },
-  { src: "/images/progress/4.jpg",  alt: "Construction progress – photo 4" },
-  { src: "/images/progress/5.jpg",  alt: "Construction progress – photo 5" },
-  { src: "/images/progress/6.jpg",  alt: "Construction progress – photo 6" },
+  { src: "/images/progress/1.png",  alt: "Construction progress – photo 1" },
+  { src: "/images/progress/2.jpeg", alt: "Construction progress – photo 2" },
+  { src: "/images/progress/3.png",  alt: "Construction progress – photo 3" },
+  { src: "/images/progress/4.png",  alt: "Construction progress – photo 4" },
+  { src: "/images/progress/5.png",  alt: "Construction progress – photo 5" },
+  { src: "/images/progress/6.png",  alt: "Construction progress – photo 6" },
   // ── To add more photos, drop them in public/images/progress/ and add a line:
-  // { src: "/images/progress/7.jpg", alt: "Construction progress – photo 7" },
+  // { src: "/images/progress/7.png", alt: "Construction progress – photo 7" },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -75,50 +94,58 @@ const units = [
   },
 ];
 
-// ─────────────────────────────────────────────────────────────────────────────
-// COMPANY LOGOS (Companies Making This a Reality)
-// ─────────────────────────────────────────────────────────────────────────────
-const companies: { src: string; alt: string; href: string }[] = [
-  // { src: "/images/companies/logo1.png", alt: "Company name", href: "https://company.com" },
-];
-
 export default function HomePage() {
   return (
     <main>
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <Hero />
 
-      {/* ── ABOUT / INTRO ─────────────────────────────────────────────────── */}
-      <section id="about" className="bg-white py-20 md:py-28">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-[#091235] font-display text-3xl md:text-4xl font-light leading-relaxed tracking-wide">
-            Panorama 270° is a vertical residential project in{" "}
-            <span className="italic">Jaboncillo, Escazú.</span>
-          </p>
+      {/* ── ABOUT / INTRO — two-column: left carousel, right text ────────── */}
+      <section id="about" className="bg-white">
+        <div className="flex flex-col md:flex-row min-h-[560px] md:min-h-[640px]">
 
-          <div className="mt-10 w-10 h-px bg-[#C8C8C8] mx-auto" />
+          {/* Left: image carousel (full height of the section) */}
+          <div className="relative w-full md:w-1/2 min-h-[400px] md:min-h-[640px]">
+            <Carousel
+              images={section1Images}
+              autoPlayInterval={5000}
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
 
-          <p className="mt-10 text-gray-600 font-body text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-            The second phase of the project includes the development of Panorama
-            270°, with a height of{" "}
-            <strong className="text-[#091235] font-medium">7 stories</strong>{" "}
-            and a total of{" "}
-            <strong className="text-[#091235] font-medium">
-              19 residential units
-            </strong>
-            .
-          </p>
-          <p className="mt-5 text-gray-600 font-body text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-            The building features three apartment models with total areas ranging
-            from{" "}
-            <strong className="text-[#091235] font-medium">320 m²</strong> to{" "}
-            <strong className="text-[#091235] font-medium">510 m²</strong>.
-          </p>
-          <p className="mt-5 text-gray-600 font-body text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-            Located in the most privileged area of Escazú, the location offers
-            the most favorable conditions for spectacular views of over{" "}
-            <strong className="text-[#091235] font-medium">270°</strong>.
-          </p>
+          {/* Right: text content */}
+          <div className="w-full md:w-1/2 flex items-center px-8 lg:px-16 py-16 md:py-20">
+            <div className="max-w-xl">
+              <p className="text-[#091235] font-display text-3xl md:text-4xl font-light leading-relaxed tracking-wide">
+                Panorama 270° is a vertical residential project in{" "}
+                <span className="italic">Jaboncillo, Escazú.</span>
+              </p>
+
+              <div className="mt-10 w-10 h-px bg-[#C8C8C8]" />
+
+              <p className="mt-10 text-gray-600 font-body text-base md:text-lg leading-relaxed">
+                The second phase of the project includes the development of Panorama
+                270°, with a height of{" "}
+                <strong className="text-[#091235] font-medium">7 stories</strong>{" "}
+                and a total of{" "}
+                <strong className="text-[#091235] font-medium">
+                  19 residential units
+                </strong>
+                .
+              </p>
+              <p className="mt-5 text-gray-600 font-body text-base md:text-lg leading-relaxed">
+                The building features three apartment models with total areas ranging
+                from{" "}
+                <strong className="text-[#091235] font-medium">320 m²</strong> to{" "}
+                <strong className="text-[#091235] font-medium">510 m²</strong>.
+              </p>
+              <p className="mt-5 text-gray-600 font-body text-base md:text-lg leading-relaxed">
+                Located in the most privileged area of Escazú, the location offers
+                the most favorable conditions for spectacular views of over{" "}
+                <strong className="text-[#091235] font-medium">270°</strong>.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -190,7 +217,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CONSTRUCTION PROGRESS ────────────────────────────────────────── */}
+      {/* ── CONSTRUCTION PROGRESS — carousel ─────────────────────────────── */}
       <section id="progress" className="bg-white py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto px-6">
           <h2 className="text-center text-[#091235] font-display text-4xl md:text-5xl font-light tracking-wide mb-4">
@@ -199,17 +226,13 @@ export default function HomePage() {
           <div className="w-10 h-px bg-[#C8C8C8] mx-auto mb-16" />
 
           {progressImages.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {progressImages.map((img, i) => (
-                <div key={i} className="relative aspect-[4/3] overflow-hidden group">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              ))}
+            /* Carousel — full-width, fixed height */
+            <div className="relative w-full h-[420px] md:h-[560px] lg:h-[640px]">
+              <Carousel
+                images={progressImages}
+                autoPlayInterval={4500}
+                className="w-full h-full"
+              />
             </div>
           ) : (
             <p className="text-center text-gray-400 font-body tracking-wider text-sm">
@@ -264,28 +287,24 @@ export default function HomePage() {
       </section>
 
       {/* ── COMPANIES MAKING THIS A REALITY ──────────────────────────────── */}
-      {companies.length > 0 && (
-        <section className="bg-white py-16 md:py-20">
-          <div className="max-w-screen-xl mx-auto px-6">
-            <h2 className="text-center text-[#091235] font-display text-3xl md:text-4xl font-light tracking-wide mb-12">
-              Companies Making This a Reality
-            </h2>
-            <div className="flex flex-wrap items-center justify-center gap-12">
-              {companies.map((co, i) => (
-                <a
-                  key={i}
-                  href={co.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="opacity-70 hover:opacity-100 transition-opacity"
-                >
-                  <Image src={co.src} alt={co.alt} width={160} height={60} className="object-contain" />
-                </a>
-              ))}
+      <section className="bg-white py-16 md:py-20">
+        <div className="max-w-screen-xl mx-auto px-6">
+          <h2 className="text-center text-[#091235] font-display text-3xl md:text-4xl font-light tracking-wide mb-12">
+            Companies Making This a Reality
+          </h2>
+          <div className="flex items-center justify-center">
+            <div className="relative w-full max-w-3xl">
+              <Image
+                src="/images/companies/companias.png"
+                alt="Companies making Panorama 270° a reality"
+                width={1200}
+                height={400}
+                className="w-full h-auto object-contain"
+              />
             </div>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       {/* ── PANORAMA 180 PROMO ───────────────────────────────────────────── */}
       <section className="relative bg-[#091235] py-24 md:py-32 overflow-hidden">
