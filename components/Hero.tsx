@@ -1,56 +1,25 @@
-"use client";
-
-import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// HERO VIDEO SOURCE
-// Replace with your own hosted video once you upload it to /public/videos/
-// or keep the Wix CDN URL while you migrate assets.
+// HERO IMAGE SOURCE
+// Replace the file at /public/images/hero.png to swap the background.
 // ─────────────────────────────────────────────────────────────────────────────
-const HERO_VIDEO_SRC =
-  "/videos/hero.mp4"; // local (place your file here)
-const HERO_VIDEO_FALLBACK =
-  "https://video.wixstatic.com/video/53ff5e_fccaea1ced2d4d3393d94e5cb399c8cb/1080p/mp4/file.mp4";
-
-// Poster image (first frame) – shown while video loads
-const HERO_POSTER =
-  "https://static.wixstatic.com/media/53ff5e_fccaea1ced2d4d3393d94e5cb399c8cbf000.jpg/v1/fill/w_1440,h_782,al_c,q_85,usm_0.33_1.00_0.00,enc_avif,quality_auto/53ff5e_fccaea1ced2d4d3393d94e5cb399c8cbf000.jpg";
+const HERO_IMAGE = "/images/hero.png";
 
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    // If local file not found, fall back to the CDN URL
-    const video = videoRef.current;
-    if (!video) return;
-
-    const handleError = () => {
-      if (video.src !== HERO_VIDEO_FALLBACK) {
-        video.src = HERO_VIDEO_FALLBACK;
-        video.load();
-        video.play().catch(() => {});
-      }
-    };
-
-    video.addEventListener("error", handleError);
-    return () => video.removeEventListener("error", handleError);
-  }, []);
-
   return (
     <section
       id="home"
       className="relative w-full h-screen min-h-[600px] overflow-hidden"
     >
-      {/* ── Full-screen video ── */}
-      <video
-        ref={videoRef}
-        src={HERO_VIDEO_SRC}
-        poster={HERO_POSTER}
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+      {/* ── Full-screen background image ── */}
+      <Image
+        src={HERO_IMAGE}
+        alt="Panorama 270° – Jaboncillo, Escazú"
+        fill
+        priority
+        className="object-cover"
+        sizes="100vw"
       />
 
       {/* ── Dark overlay for legibility ── */}
