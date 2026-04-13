@@ -176,11 +176,11 @@ export default function HomePage() {
 
       {/* ── WHATSAPP CTA ─────────────────────────────────────────────────── */}
       <section id="contact" className="bg-[#091235] py-20 md:py-24">
-        <div className="max-w-2xl mx-auto px-6 text-center">
-          <p className="text-[#C8C8C8] font-display text-3xl md:text-4xl font-light leading-relaxed tracking-wide">
-            For more information, contact us directly via
+        <div className="max-w-xl mx-auto px-6 text-center">
+          <p className="text-[#C8C8C8] font-display text-3xl md:text-4xl font-light leading-snug tracking-wide">
+            For more information,<br />contact us directly via
           </p>
-          <h2 className="text-white font-display text-4xl md:text-5xl font-light tracking-widest mt-2">
+          <h2 className="text-white font-display text-4xl md:text-5xl font-light tracking-widest mt-3">
             WhatsApp.
           </h2>
           <div className="mt-8 w-10 h-px bg-white/30 mx-auto" />
