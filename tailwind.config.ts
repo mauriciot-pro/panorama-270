@@ -21,9 +21,9 @@ const config: Config = {
         divider: "#D7D7D8",     // Section dividers
       },
       fontFamily: {
-        sans: ["'Cormorant Garamond'", "Georgia", "serif"],
-        display: ["'Cormorant Garamond'", "Georgia", "serif"],
-        body: ["'Lato'", "Arial", "sans-serif"],
+        sans: ["'Brandon Grotesque'", "Arial", "sans-serif"],
+        display: ["'Brandon Grotesque'", "Arial", "sans-serif"],
+        body: ["'Brandon Grotesque'", "Arial", "sans-serif"],
       },
       letterSpacing: {
         widest: "0.25em",

@@ -3,10 +3,8 @@
 @tailwind utilities;
 
 
-/* ─── Google Fonts ─────────────────────────────────────────────────────────
-   Cormorant Garamond → elegant display / headings (matches Wix luxury feel)
-   Lato              → clean body text
-   Both are imported via <link> in layout.tsx
+/* ─── Brandon Grotesque ────────────────────────────────────────────────────
+   Loaded via CDN Fonts in layout.tsx
 ──────────────────────────────────────────────────────────────────────────── */
 
 @layer base {
@@ -16,11 +14,11 @@
 
   body {
     @apply antialiased text-gray-800;
-    font-family: "Lato", Arial, sans-serif;
+    font-family: "Brandon Grotesque", Arial, sans-serif;
   }
 
   h1, h2, h3, h4 {
-    font-family: "Cormorant Garamond", Georgia, serif;
+    font-family: "Brandon Grotesque", Arial, sans-serif;
   }
 }
 

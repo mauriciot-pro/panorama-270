@@ -14,9 +14,10 @@ interface UnitCardProps {
   imageSrc: string;   // floor plan image
   specs: UnitSpec[];
   extras?: string[];
+  plainExtras?: boolean; // when true, render extras as plain text (no border box)
 }
 
-export default function UnitCard({ name, imageSrc, specs, extras = [] }: UnitCardProps) {
+export default function UnitCard({ name, imageSrc, specs, extras = [], plainExtras = false }: UnitCardProps) {
   const [expanded, setExpanded] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
@@ -112,12 +113,21 @@ export default function UnitCard({ name, imageSrc, specs, extras = [] }: UnitCar
               {extras.length > 0 && (
                 <div className="mt-6 pt-6 border-t border-[#D7D7D8] flex flex-wrap gap-3">
                   {extras.map((item) => (
-                    <span
-                      key={item}
-                      className="text-[#666] text-[11px] tracking-[0.15em] uppercase font-body border border-[#D7D7D8] px-4 py-2"
-                    >
-                      {item}
-                    </span>
+                    plainExtras ? (
+                      <span
+                        key={item}
+                        className="text-[#666] text-[11px] tracking-[0.15em] uppercase font-body"
+                      >
+                        {item}
+                      </span>
+                    ) : (
+                      <span
+                        key={item}
+                        className="text-[#666] text-[11px] tracking-[0.15em] uppercase font-body border border-[#D7D7D8] px-4 py-2"
+                      >
+                        {item}
+                      </span>
+                    )
                   ))}
                 </div>
               )}

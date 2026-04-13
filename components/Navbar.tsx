@@ -7,9 +7,9 @@ import Image from "next/image";
 const navLinks = [
   { label: "Home", href: "/#home" },
   { label: "Models", href: "/#models" },
-  { label: "Contact", href: "/#contact" },
   { label: "Progress", href: "/#progress" },
   { label: "Location", href: "/#location" },
+  { label: "Contact Us", href: "/#contact" },
   { label: "Panorama 180°", href: "/panorama-180" },
 ];
 
