@@ -6,54 +6,43 @@ import Image from "next/image";
 /**
  * SplashScreen
  *
- * Shows once per browser session (tracked via sessionStorage).
- * Timeline (≤ 2 s total visible duration):
- *   0 ms        — overlay mounts at opacity 0
- *   50 ms       — fade IN starts  (550 ms ease)
- *   ~600 ms     — fully visible
- *   1 250 ms    — fade OUT starts (700 ms ease)
- *   ~1 950 ms   — fully transparent → removed from DOM
+ * Renders at full opacity in the initial server HTML so the overlay is
+ * present before any page content is visible — no hero flash.
+ *
+ * Timeline (first visit, ≤ 2 s):
+ *   SSR / mount  — overlay covers page at opacity 1
+ *   ~1 350 ms    — fade OUT starts  (750 ms ease)
+ *   ~2 100 ms    — fully transparent → removed from DOM
+ *
+ * Repeat visits: sessionStorage check runs immediately in useEffect,
+ * overlay is removed before the user perceives it.
  */
+
+type Phase = "cover" | "fadeOut" | "gone";
+
 export default function SplashScreen() {
-  // null = "deciding", true = show, false = hide
-  const [show, setShow] = useState<boolean | null>(null);
-  const [opacity, setOpacity] = useState(0);
-  const [scale, setScale] = useState(0.94);
+  // "cover" is the SSR default — ensures the page is hidden on first paint
+  const [phase, setPhase] = useState<Phase>("cover");
 
   useEffect(() => {
-    // Only run on the client side
+    // Repeat visit — hide instantly, no animation
     if (sessionStorage.getItem("splashShown")) {
-      setShow(false);
+      setPhase("gone");
       return;
     }
     sessionStorage.setItem("splashShown", "1");
-    setShow(true);
 
-    // Trigger fade-in on next paint
-    const tIn = setTimeout(() => {
-      setOpacity(1);
-      setScale(1);
-    }, 60);
-
-    // Start fade-out
-    const tOut = setTimeout(() => {
-      setOpacity(0);
-    }, 1250);
-
-    // Remove from DOM after fade-out completes
-    const tGone = setTimeout(() => {
-      setShow(false);
-    }, 2000);
+    // First visit — hold, then fade out
+    const tFade = setTimeout(() => setPhase("fadeOut"), 1350);
+    const tGone = setTimeout(() => setPhase("gone"), 2150);
 
     return () => {
-      clearTimeout(tIn);
-      clearTimeout(tOut);
+      clearTimeout(tFade);
       clearTimeout(tGone);
     };
   }, []);
 
-  // Don't render anything until we know whether to show
-  if (show === null || show === false) return null;
+  if (phase === "gone") return null;
 
   return (
     <div
@@ -66,20 +55,27 @@ export default function SplashScreen() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        opacity,
-        pointerEvents: opacity < 1 ? "none" : "all",
+        opacity: phase === "fadeOut" ? 0 : 1,
         transition:
-          opacity === 1
-            ? "opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1)"
-            : "opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1)",
+          phase === "fadeOut"
+            ? "opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1)"
+            : "none",
+        pointerEvents: phase === "fadeOut" ? "none" : "all",
       }}
     >
+      {/* Logo in its original grey/gold palette — no colour filter */}
       <div
         style={{
-          transform: `scale(${scale})`,
-          transition: "transform 0.85s cubic-bezier(0.16, 1, 0.3, 1)",
+          transform: "scale(1)",
+          animation: phase === "cover" ? "splashIn 0.9s cubic-bezier(0.16,1,0.3,1) forwards" : "none",
         }}
       >
+        <style>{`
+          @keyframes splashIn {
+            from { opacity: 0; transform: scale(0.92); }
+            to   { opacity: 1; transform: scale(1); }
+          }
+        `}</style>
         <Image
           src="/images/logo-splash.png"
           alt="Panorama 270°"
@@ -87,9 +83,7 @@ export default function SplashScreen() {
           height={126}
           priority
           style={{
-            // Render the logo in pure white so it reads clearly on the navy bg
-            filter: "brightness(0) invert(1)",
-            width: "clamp(140px, 18vw, 210px)",
+            width: "clamp(150px, 20vw, 220px)",
             height: "auto",
           }}
         />
