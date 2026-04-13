@@ -58,9 +58,6 @@ export default function Hero() {
 
       {/* ── Hero text overlay ── */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-        <p className="text-white/80 text-xs tracking-[0.35em] uppercase mb-4 font-light font-body">
-          Jaboncillo, Escazú
-        </p>
         <h1 className="text-white font-display text-5xl md:text-7xl lg:text-8xl font-light leading-tight tracking-wide">
           Panorama
           <br />
