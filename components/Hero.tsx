@@ -30,10 +30,10 @@ export default function Hero() {
         <h1 className="text-white font-display text-5xl md:text-7xl lg:text-8xl font-light leading-tight tracking-wide">
           Panorama
           <br />
-          <span className="italic">270°</span>
+          270°
         </h1>
         <div className="mt-6 w-12 h-px bg-white/60 mx-auto" />
-        <p className="mt-6 text-white/80 text-sm md:text-base tracking-[0.12em] font-body font-light max-w-md">
+        <p className="mt-6 text-white text-base md:text-lg tracking-[0.12em] font-body font-light max-w-md drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
           A vertical residential project in Jaboncillo, Escazú
         </p>
 
