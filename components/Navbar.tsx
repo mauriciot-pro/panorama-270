@@ -67,8 +67,8 @@ export default function Navbar() {
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
               className="
-                relative text-white text-xs tracking-[0.18em] uppercase
-                font-light transition-colors duration-200 hover:text-white/70
+                relative text-white/70 text-xs tracking-[0.18em] uppercase
+                font-light transition-all duration-200 hover:text-white hover:tracking-[0.22em]
                 after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px
                 after:bg-white after:transition-all after:duration-300
                 hover:after:w-full
@@ -115,7 +115,7 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-white text-xs tracking-[0.18em] uppercase font-light hover:text-white/70 transition-colors"
+              className="text-white/70 text-xs tracking-[0.18em] uppercase font-light hover:text-white transition-all"
             >
               {link.label}
             </Link>
