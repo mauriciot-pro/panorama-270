@@ -47,7 +47,7 @@ export default function Panorama180Page() {
           <h1 className="text-white font-display text-6xl md:text-8xl lg:text-9xl font-light tracking-wide leading-tight">
             Panorama
             <br />
-            <span className="italic">180°</span>
+            180°
           </h1>
           <div className="mt-8 w-12 h-px bg-white/40 mx-auto" />
           <p className="mt-7 text-white/75 font-body text-sm md:text-base leading-relaxed tracking-widest max-w-sm mx-auto">
