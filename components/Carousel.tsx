@@ -52,7 +52,7 @@ export default function Carousel({
             src={img.src}
             alt={img.alt}
             fill
-            className="object-cover"
+            className="object-contain"
             priority={i === 0}
             sizes="(max-width: 768px) 100vw, 50vw"
           />
