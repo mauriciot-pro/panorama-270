@@ -27,9 +27,6 @@ export default function Hero() {
 
       {/* ── Hero text overlay ── */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-        <p className="text-white/70 text-xs tracking-[0.35em] uppercase font-body mb-5">
-          Phase Two · Now Underway
-        </p>
         <h1 className="text-white font-display text-6xl md:text-8xl lg:text-9xl font-light tracking-wide leading-tight">
           Panorama
           <br />
