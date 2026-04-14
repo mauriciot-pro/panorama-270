@@ -24,9 +24,15 @@ const LeafletMap = dynamic(() => import("@/components/LeafletMap"), {
 // (e.g. 10.jpg), then add an entry below.
 // ─────────────────────────────────────────────────────────────────────────────
 const section1Images = [
-  { src: "/images/section1/pic1.png", alt: "Panorama 270° – Photo 1" },
-  { src: "/images/section1/pic2.png", alt: "Panorama 270° – Photo 2" },
-  { src: "/images/section1/pic3.png", alt: "Panorama 270° – Photo 3" },
+  { src: "/images/section1/pic1.png",      alt: "Panorama 270° – Photo 1" },
+  { src: "/images/section1/pic2.png",      alt: "Panorama 270° – Photo 2" },
+  { src: "/images/section1/pic3.png",      alt: "Panorama 270° – Photo 3" },
+  { src: "/images/section1/render1.jpeg",  alt: "Panorama 270° – Render 1" },
+  { src: "/images/section1/render3.jpeg",  alt: "Panorama 270° – Render 3" },
+  { src: "/images/section1/render4.jpeg",  alt: "Panorama 270° – Render 4" },
+  { src: "/images/section1/render5.jpeg",  alt: "Panorama 270° – Render 5" },
+  { src: "/images/section1/photo1.jpg",    alt: "Panorama 270° – Photo" },
+  { src: "/images/section1/whatsapp1.jpeg",alt: "Panorama 270° – Site photo" },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
