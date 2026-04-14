@@ -122,21 +122,20 @@ export default function HomePage() {
           <div className="w-full md:w-1/2 flex items-center px-8 lg:px-16 py-16 md:py-20">
             <div className="max-w-xl">
               <p className="text-[#091235] font-display text-3xl md:text-4xl font-light leading-relaxed tracking-wide">
-                Panorama 270° is a vertical residential project in{" "}
-                <span className="italic">Jaboncillo, Escazú.</span>
+                Panorama 270° is a vertical residential project in Jaboncillo, Escazú.
               </p>
 
               <div className="mt-10 w-10 h-px bg-[#C8C8C8]" />
 
-              <p className="mt-10 text-gray-600 font-body text-base md:text-lg leading-relaxed">
+              <p className="mt-10 text-gray-600 font-body font-light text-base md:text-lg leading-relaxed">
                 The second phase of the project includes the development of Panorama
                 270°, with a height of 7 stories and a total of 19 residential units.
               </p>
-              <p className="mt-5 text-gray-600 font-body text-base md:text-lg leading-relaxed">
+              <p className="mt-5 text-gray-600 font-body font-light text-base md:text-lg leading-relaxed">
                 The building features three apartment models with total areas ranging
                 from 320 m² to 510 m².
               </p>
-              <p className="mt-5 text-gray-600 font-body text-base md:text-lg leading-relaxed">
+              <p className="mt-5 text-gray-600 font-body font-light text-base md:text-lg leading-relaxed">
                 Located in the most privileged area of Escazú, the location offers
                 the most favorable conditions for spectacular views of over 270°.
               </p>
