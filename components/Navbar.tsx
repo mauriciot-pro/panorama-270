@@ -28,13 +28,14 @@ export default function Navbar() {
     href: string
   ) => {
     setMenuOpen(false);
-    // Smooth scroll for anchor links on the same page
-    if (href.startsWith("/#")) {
+    // Smooth scroll only when already on the home page
+    if (href.startsWith("/#") && window.location.pathname === "/") {
       e.preventDefault();
       const id = href.replace("/#", "");
       const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: "smooth" });
     }
+    // On any other page, let the browser navigate to /#section normally
   };
 
   return (
