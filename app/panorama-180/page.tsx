@@ -89,13 +89,13 @@ export default function Panorama180Page() {
                 </p>
                 <div className="w-10 h-px bg-[#C8C8C8] mb-8" />
 
-                <p className="text-gray-600 font-body text-base md:text-lg leading-relaxed">
+                <p className="text-gray-900 font-body font-light text-lg md:text-xl leading-relaxed">
                   Panorama 180° is the first completed phase of a landmark
                   residential development in Jaboncillo, Escazú — setting the
                   benchmark for elevated living in Costa Rica's most
                   sought-after neighborhood.
                 </p>
-                <p className="mt-5 text-gray-600 font-body text-base md:text-lg leading-relaxed">
+                <p className="mt-5 text-gray-900 font-body font-light text-lg md:text-xl leading-relaxed">
                   Rising 7 levels with 19 exclusive residences, the building
                   offers two distinct apartment models ranging from 320 m² to
                   445 m². Positioned on Escazú's most privileged hillside, every
