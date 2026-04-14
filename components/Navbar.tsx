@@ -68,7 +68,7 @@ export default function Navbar() {
               onClick={(e) => handleNavClick(e, link.href)}
               className="
                 relative text-white/70 text-xs tracking-[0.18em] uppercase
-                font-light transition-all duration-200 hover:text-white hover:tracking-[0.22em]
+                font-light transition-colors duration-200 hover:text-white
                 after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px
                 after:bg-white after:transition-all after:duration-300
                 hover:after:w-full
