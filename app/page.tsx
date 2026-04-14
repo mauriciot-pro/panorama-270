@@ -105,40 +105,42 @@ export default function HomePage() {
 
       {/* ── ABOUT / INTRO — two-column: left carousel, right text ────────── */}
       <section id="about" className="bg-white">
-        <div className="flex flex-col md:flex-row min-h-[560px] md:min-h-[640px]">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="flex flex-col md:flex-row min-h-[560px] md:min-h-[640px]">
 
-          {/* Left: image carousel with surrounding whitespace */}
-          <div className="relative w-full md:w-1/2 min-h-[400px] md:min-h-[640px] p-6 md:p-10 flex items-stretch">
-            <div className="relative w-full h-full min-h-[350px]">
-              <Carousel
-                images={section1Images}
-                autoPlayInterval={5000}
-                className="absolute inset-0 w-full h-full"
-              />
+            {/* Left: carousel with whitespace padding — matches P180 image layout */}
+            <div className="w-full md:w-[45%] min-h-[420px] md:min-h-[640px] flex items-center justify-center p-8 md:p-10 bg-white">
+              <div className="relative w-full h-full min-h-[360px]">
+                <Carousel
+                  images={section1Images}
+                  autoPlayInterval={5000}
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
             </div>
-          </div>
 
-          {/* Right: text content */}
-          <div className="w-full md:w-1/2 flex items-center px-8 lg:px-16 py-16 md:py-20">
-            <div className="max-w-xl">
-              <p className="text-[#091235] font-display text-3xl md:text-4xl font-light leading-relaxed tracking-wide">
-                Panorama 270° is a vertical residential project in Jaboncillo, Escazú.
-              </p>
+            {/* Right: text content */}
+            <div className="w-full md:w-[55%] flex items-center px-8 lg:px-16 xl:px-20 py-16 md:py-20">
+              <div className="max-w-lg">
+                <p className="text-[#091235] font-display text-3xl md:text-4xl font-light leading-relaxed tracking-wide">
+                  Panorama 270° is a vertical residential project in Jaboncillo, Escazú.
+                </p>
 
-              <div className="mt-10 w-10 h-px bg-[#C8C8C8]" />
+                <div className="mt-8 w-10 h-px bg-[#C8C8C8] mb-8" />
 
-              <p className="mt-10 text-gray-900 font-body font-light text-lg md:text-xl leading-relaxed">
-                The second phase of the project includes the development of Panorama
-                270°, with a height of 7 stories and a total of 19 residential units.
-              </p>
-              <p className="mt-5 text-gray-900 font-body font-light text-lg md:text-xl leading-relaxed">
-                The building features three apartment models with total areas ranging
-                from 320 m² to 510 m².
-              </p>
-              <p className="mt-5 text-gray-900 font-body font-light text-lg md:text-xl leading-relaxed">
-                Located in the most privileged area of Escazú, the location offers
-                the most favorable conditions for spectacular views of over 270°.
-              </p>
+                <p className="text-gray-900 font-body font-light text-lg md:text-xl leading-relaxed">
+                  The second phase of the project includes the development of Panorama
+                  270°, with a height of 7 stories and a total of 19 residential units.
+                </p>
+                <p className="mt-5 text-gray-900 font-body font-light text-lg md:text-xl leading-relaxed">
+                  The building features three apartment models with total areas ranging
+                  from 320 m² to 510 m².
+                </p>
+                <p className="mt-5 text-gray-900 font-body font-light text-lg md:text-xl leading-relaxed">
+                  Located in the most privileged area of Escazú, the location offers
+                  the most favorable conditions for spectacular views of over 270°.
+                </p>
+              </div>
             </div>
           </div>
         </div>
