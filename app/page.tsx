@@ -60,6 +60,18 @@ const progressImages = [
 // ─────────────────────────────────────────────────────────────────────────────
 const units = [
   {
+    name: "Corner Unit",
+    image: "/images/units/unit-corner.jpg",
+    specs: [
+      { label: "Total area", value: "366 m²" },
+      { label: "Bedrooms",   value: "3" },
+      { label: "Bathrooms",  value: "3 ½" },
+      { label: "Parking",    value: "3" },
+    ],
+    extras: ["Maid's room", "Storage room"],
+    plainExtras: true,
+  },
+  {
     name: "Center Unit A",
     image: "/images/units/unit-a.jpg",
     specs: [
@@ -79,18 +91,6 @@ const units = [
       { label: "Bedrooms",   value: "2" },
       { label: "Bathrooms",  value: "2 ½" },
       { label: "Parking",    value: "2" },
-    ],
-    extras: ["Maid's room", "Storage room"],
-    plainExtras: true,
-  },
-  {
-    name: "Corner Unit",
-    image: "/images/units/unit-corner.jpg",
-    specs: [
-      { label: "Total area", value: "366 m²" },
-      { label: "Bedrooms",   value: "3" },
-      { label: "Bathrooms",  value: "3 ½" },
-      { label: "Parking",    value: "3" },
     ],
     extras: ["Maid's room", "Storage room"],
     plainExtras: true,
