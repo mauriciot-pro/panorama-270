@@ -44,14 +44,14 @@ const section1Images = [
 // the on-screen sequence.
 // ─────────────────────────────────────────────────────────────────────────────
 const progressImages = [
-  { src: "/images/progress/1.png",  alt: "Construction progress – photo 1" },
-  { src: "/images/progress/2.png",  alt: "Construction progress – photo 2" },
-  { src: "/images/progress/3.png",  alt: "Construction progress – photo 3" },
-  { src: "/images/progress/4.png",  alt: "Construction progress – photo 4" },
-  { src: "/images/progress/5.png",  alt: "Construction progress – photo 5" },
+  { src: "/images/progress/1.jpeg", alt: "Construction progress – photo 1" },
+  { src: "/images/progress/2.jpeg", alt: "Construction progress – photo 2" },
+  { src: "/images/progress/3.jpeg", alt: "Construction progress – photo 3" },
+  { src: "/images/progress/4.jpeg", alt: "Construction progress – photo 4" },
+  { src: "/images/progress/5.jpeg", alt: "Construction progress – photo 5" },
   { src: "/images/progress/6.png",  alt: "Construction progress – photo 6" },
   // ── To add more photos, drop them in public/images/progress/ and add a line:
-  // { src: "/images/progress/7.png", alt: "Construction progress – photo 7" },
+  // { src: "/images/progress/7.jpeg", alt: "Construction progress – photo 7" },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
