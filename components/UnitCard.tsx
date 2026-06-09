@@ -15,9 +15,10 @@ interface UnitCardProps {
   specs: UnitSpec[];
   extras?: string[];
   plainExtras?: boolean; // when true, render extras as plain text (no border box)
+  unavailable?: boolean; // when true, shows "(no longer available.)" below the unit name
 }
 
-export default function UnitCard({ name, imageSrc, specs, extras = [], plainExtras = false }: UnitCardProps) {
+export default function UnitCard({ name, imageSrc, specs, extras = [], plainExtras = false, unavailable = false }: UnitCardProps) {
   const [expanded, setExpanded] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
@@ -47,6 +48,11 @@ export default function UnitCard({ name, imageSrc, specs, extras = [], plainExtr
             <h3 className="text-[#091235] font-display text-2xl md:text-3xl font-light tracking-wide">
               {name}
             </h3>
+            {unavailable && (
+              <p className="text-[#999] text-[11px] tracking-[0.22em] font-body mt-1">
+                (no longer available.)
+              </p>
+            )}
           </div>
 
           {/* Animated +/– icon */}
