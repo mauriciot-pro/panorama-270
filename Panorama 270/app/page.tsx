@@ -62,6 +62,7 @@ const units = [
   {
     name: "Corner Unit",
     image: "/images/units/unit-corner.jpg",
+    unavailable: false,
     specs: [
       { label: "Total area", value: "366 m²" },
       { label: "Bedrooms",   value: "3" },
