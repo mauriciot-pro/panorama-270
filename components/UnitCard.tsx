@@ -15,7 +15,7 @@ interface UnitCardProps {
   specs: UnitSpec[];
   extras?: string[];
   plainExtras?: boolean; // when true, render extras as plain text (no border box)
-  unavailable?: boolean; // when true, shows "(no longer available.)" below the unit name
+  unavailable?: boolean; // when true, shows "(NO LONGER AVAILABLE)" below the unit name
 }
 
 export default function UnitCard({ name, imageSrc, specs, extras = [], plainExtras = false, unavailable = false }: UnitCardProps) {
@@ -50,7 +50,7 @@ export default function UnitCard({ name, imageSrc, specs, extras = [], plainExtr
             </h3>
             {unavailable && (
               <p className="text-[#999] text-[11px] tracking-[0.22em] font-body mt-1">
-                (no longer available.)
+                (NO LONGER AVAILABLE)
               </p>
             )}
           </div>
