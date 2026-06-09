@@ -62,6 +62,7 @@ const units = [
   {
     name: "Corner Unit",
     image: "/images/units/unit-corner.jpg",
+    unavailable: false,
     specs: [
       { label: "Total area", value: "366 m²" },
       { label: "Bedrooms",   value: "3" },
@@ -74,6 +75,7 @@ const units = [
   {
     name: "Center Unit A",
     image: "/images/units/unit-a.jpg",
+    unavailable: true,
     specs: [
       { label: "Total area", value: "320 m²" },
       { label: "Bedrooms",   value: "3" },
@@ -86,6 +88,7 @@ const units = [
   {
     name: "Center Unit B",
     image: "/images/units/unit-b.jpg",
+    unavailable: true,
     specs: [
       { label: "Total area", value: "320 m²" },
       { label: "Bedrooms",   value: "2" },
@@ -164,6 +167,7 @@ export default function HomePage() {
                 specs={unit.specs}
                 extras={unit.extras}
                 plainExtras={unit.plainExtras}
+                unavailable={unit.unavailable}
               />
             ))}
           </div>
