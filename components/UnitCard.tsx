@@ -42,14 +42,14 @@ export default function UnitCard({ name, imageSrc, specs, extras = [], plainExtr
           aria-expanded={expanded}
         >
           <div>
-            <p className="text-[#999] text-[11px] tracking-[0.22em] uppercase font-body mb-1">
+            <p className="text-[#999] text-[9px] tracking-[0.22em] uppercase font-body mb-1">
               {expanded ? "Click to collapse" : "Click the unit to expand"}
             </p>
             <h3 className="text-[#091235] font-display text-2xl md:text-3xl font-light tracking-wide">
               {name}
             </h3>
             {unavailable && (
-              <p className="text-[#999] text-[11px] tracking-[0.22em] font-body mt-1">
+              <p className="text-[#999] text-[9px] tracking-[0.22em] font-body mt-1">
                 (NO LONGER AVAILABLE)
               </p>
             )}
@@ -106,7 +106,7 @@ export default function UnitCard({ name, imageSrc, specs, extras = [], plainExtr
               <div className="grid grid-cols-2 gap-x-6 gap-y-6">
                 {specs.map((spec) => (
                   <div key={spec.label}>
-                    <p className="text-[#999] text-[11px] tracking-[0.18em] uppercase font-body mb-1">
+                    <p className="text-[#999] text-[9px] tracking-[0.18em] uppercase font-body mb-1">
                       {spec.label}
                     </p>
                     <p className="text-[#091235] font-display text-2xl font-light">
@@ -122,14 +122,14 @@ export default function UnitCard({ name, imageSrc, specs, extras = [], plainExtr
                     plainExtras ? (
                       <span
                         key={item}
-                        className="text-[#666] text-[11px] tracking-[0.15em] uppercase font-body"
+                        className="text-[#666] text-[9px] tracking-[0.15em] uppercase font-body"
                       >
                         {item}
                       </span>
                     ) : (
                       <span
                         key={item}
-                        className="text-[#666] text-[11px] tracking-[0.15em] uppercase font-body border border-[#D7D7D8] px-4 py-2"
+                        className="text-[#666] text-[9px] tracking-[0.15em] uppercase font-body border border-[#D7D7D8] px-4 py-2"
                       >
                         {item}
                       </span>
